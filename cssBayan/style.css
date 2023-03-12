@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "DeutschGothic";
+    background-color: #e0bd2f;
+}
+
+.wrapper {
+    max-width: 1160px;
+    margin: auto;
+}
+
+.mem {
+    cursor: pointer;
+}
+
+input {
+    visibility: hidden;
+    display: none;
+}
+
+.mem__name {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    border-top: 3px solid #8d8c86;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.close {
+    opacity: 0;
+    font-size: 2em;
+}
+
+main:hover .close {
+    opacity: 1;
+    transition: 1.4s;
+}
+
+.mem__image {
+    max-height: 0;
+    opacity: 0;
+}
+
+.mem:hover .mem__image {
+    opacity: 1;
+    max-height: 50em;
+    transform: scale(1);
+    transition: 1.4s;
+}
+
+.mem input:checked ~ .mem__image {
+    max-height: 50em;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.mem input:checked ~ .mem__name .close {
+    transform: rotate(0.125turn);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+@media (max-width: 819px) and (min-width: 320px) {
+
+    .wrapper {
+        max-width: 310px;
+    }
+
+    .mem:hover .mem__image {
+        max-height: 10em;
+        transform: scale(0.2);
+    }
+
+    .mem input:checked ~ .mem__image {
+        max-height: 10em;
+        transform: scale(0.2);
+    }
+}
+
+@media (max-width: 1919px) and (min-width: 820px) {
+    .wrapper {
+        max-width: 800px;
+    }
+
+    .mem:hover .mem__image {
+        max-height: 30em;
+        transform: scale(0.8);
+    }
+
+    .mem input:checked ~ .mem__image {
+        max-height: 30em;
+        transform: scale(0.8);
+    }
+}
+
+@font-face {
+    font-family: "DeutschGothic"; 
+    src: url("./fonts/DeutschGothic.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
