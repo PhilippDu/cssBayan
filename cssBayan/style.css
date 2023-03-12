@@ -35,3 +35,40 @@ input {
     opacity: 0;
     font-size: 2em;
 }
+
+main:hover .close {
+    opacity: 1;
+    transition: 1.4s;
+}
+
+.mem__image {
+    max-height: 0;
+    opacity: 0;
+}
+
+.mem:hover .mem__image {
+    opacity: 1;
+    max-height: 50em;
+    transform: scale(1);
+    transition: 1.4s;
+}
+
+.mem input:checked ~ .mem__image {
+    max-height: 50em;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.mem input:checked ~ .mem__name .close {
+    transform: rotate(0.125turn);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+@font-face {
+    font-family: "DeutschGothic"; 
+    src: url("./fonts/DeutschGothic.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+  
